@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 27 10:23:31 2022
+# Make data base, printed on Sat Jul 16 08:23:30 2022
 
 # Variables
 
@@ -18,12 +18,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
-# makefile (from 'Makefile', line 3)
-OBJ = $(SRCS:.c=.o)
 # environment
 XDG_SESSION_CLASS = user
 # environment
 XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -35,26 +35,19 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /mnt/nfs/homes/fhadhri/Documents/Perso/so_long
- 
+CURDIR := /mnt/nfs/homes/fhadhri/Documents/Perso/Get-Next-Line
 # makefile
 SHELL = /bin/sh
-# makefile (from 'Makefile', line 6)
-RM = rm -f
-# environment
-GDM_LANG = en
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
-# makefile (from 'Makefile', line 7)
-CFLAGS = -Wall -Wextra -Werror -I.
 # environment
-JOURNAL_STREAM = 9:6220856
+JOURNAL_STREAM = 9:839070
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
 # environment
@@ -68,13 +61,17 @@ XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/fhadhri/.local
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101776/bus
 # environment
-MANAGERPID = 1626166
+VSCODE_VERBOSE_LOGGING = true
+# environment
+MANAGERPID = 94255
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101776/vscode-ipc-ae1cab99-c13d-483d-acdd-dedb48d69d07.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/fhadhri
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session16
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101776_Mc20ha
+KRB5CCNAME = FILE:/tmp/krb5cc_101776_e8nJmx
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -84,15 +81,17 @@ GPG_AGENT_INFO = /run/user/101776/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r12p13.clusters.42paris.fr:@/tmp/.ICE-unix/1626701,unix/e1r12p13.clusters.42paris.fr:/tmp/.ICE-unix/1626701
+SESSION_MANAGER = local/e1r13p2.clusters.42paris.fr:@/tmp/.ICE-unix/94663,unix/e1r13p2.clusters.42paris.fr:/tmp/.ICE-unix/94663
 # environment
 XDG_RUNTIME_DIR = /run/user/101776
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
+VSCODE_LOG_STACK = false
+# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 393834837af345588569934e3ecbff3b
+INVOCATION_ID = d2e703eb914c492680b40b32a381da96
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -104,17 +103,19 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101776/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1629565
+GIO_LAUNCHED_DESKTOP_FILE_PID = 98052
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # environment
-PWD = /mnt/nfs/homes/fhadhri/Documents/Perso/so_long
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /mnt/nfs/homes/fhadhri/Documents/Perso/Get-Next-Line
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1626665
+SSH_AGENT_PID = 94622
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -124,7 +125,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /mnt/nfs/homes/fhadhri
 # environment
-VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/fhadhri/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/fhadhri/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = fhadhri
 # environment
@@ -145,12 +146,8 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
-# makefile (from 'Makefile', line 1)
-SRCS = main.c
 # environment
 SHLVL = 1
-# makefile (from 'Makefile', line 5)
-CC = gcc
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -158,7 +155,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = fhadhri
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := 
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -176,11 +173,9 @@ OLDPWD = /mnt/nfs/homes/fhadhri
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = en
-# environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/101776/vscode-49eac23d-1.69.2-main.sock
+VSCODE_IPC_HOOK = /run/user/101776/vscode-49eac23d-1.68.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -217,8 +212,6 @@ CHROME_DESKTOP = code-url-handler.desktop
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
-# makefile (from 'Makefile', line 9)
-NAME = so_long
 # default
 .RECIPEPREFIX := 
 # environment
@@ -226,9 +219,9 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/101776/docker.sock
 # environment
-VSCODE_PID = 1629565
+VSCODE_PID = 98052
 # variable set hash-table stats:
-# Load=108/1024=11%, Rehash=0, Collisions=15/137=11%
+# Load=105/1024=10%, Rehash=0, Collisions=7/127=6%
 
 # Pattern-specific Variable Values
 
@@ -236,54 +229,36 @@ VSCODE_PID = 1629565
 
 # Directories
 
-# . (device 58, inode 107875548): 14 files, no impossibilities.
+# . (device 55, inode 41893903): 18 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-%.o: %.c
-#  recipe to execute (from 'Makefile', line 16):
-	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
-
-# 1 implicit rules, 0 (0.0%) terminal.
+# No implicit rules.
 
 # Files
 
-all: so_long
-#  Phony target (prerequisite of .PHONY).
-#  Command line target.
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Successfully updated.
-
-.PHONY: all clean fclean re
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # Not a target:
-main.c:
+all:
+#  Command line target.
 #  Implicit rule search has been done.
-#  Last modified 2022-08-26 12:17:38.480367726
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-23 14:49:00.599883599
-#  File has been updated.
-#  Successfully updated.
-
-fclean: clean
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
-				$(RM) $(NAME)
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
@@ -291,54 +266,30 @@ fclean: clean
 #  Modification time never checked.
 #  File has not been updated.
 
-re: fclean
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 30):
-				make all
-
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-				$(RM) $(OBJS)
-
-main.o: main.c
+# Not a target:
+GNUmakefile:
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-08-26 12:17:46.606417106
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 16):
-	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
-
- 
-so_long: main.o
-#  Implicit rule search has not been done.
-#  Last modified 2022-08-26 12:17:46.816418381
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 19):
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Lminilibx-linux -lXext -lX11 -lm -lz -o $(NAME)
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/34=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 195 B / avg = 7 B
-# current buf: size = 8162 B / used = 195 B / count = 26 / avg = 7 B
+ 
+make: *** No rule to make target 'all'.  Stop.
 
-# strcache performance: lookups = 48 / hit rate = 45%
+# strcache buffers: 1 (0) / strings = 26 / storage = 286 B / avg = 11 B
+# current buf: size = 8162 B / used = 286 B / count = 26 / avg = 11 B
+
+# strcache performance: lookups = 29 / hit rate = 10%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/48=2%
-# Finished Make data base on Sat Aug 27 10:23:31 2022
+# Load=26/8192=0%, Rehash=0, Collisions=1/29=3%
+# Finished Make data base on Sat Jul 16 08:23:30 2022
 
  

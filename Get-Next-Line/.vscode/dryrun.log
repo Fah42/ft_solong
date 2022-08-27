@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/fhadhri/Documents/Perso/Get-Next-Line'
+make: Leaving directory '/mnt/nfs/homes/fhadhri/Documents/Perso/Get-Next-Line'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
