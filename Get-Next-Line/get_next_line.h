@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:49:55 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/27 11:27:12 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/27 11:29:55 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,5 @@ char	*ft_free(char *str);
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
+
+#endif

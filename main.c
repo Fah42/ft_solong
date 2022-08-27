@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/27 11:25:05 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/27 11:29:18 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ int	main(void)
 	// void	*mlx;
 	// void	*mlx_win;
 	int		map;
+	char	*ligne;
+
 	map = open("path_name.c", O_RDONLY);
-	get_next_line(map);
+	ligne = get_next_line(map);
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	// mlx_loop(mlx);
