@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sat Aug 27 10:23:31 2022
+# Make data base, printed on Sat Aug 27 10:59:06 2022
 
 # Variables
 
@@ -36,7 +37,6 @@ GDMSESSION = ubuntu
 XMODIFIERS = @im=ibus
 # makefile
 CURDIR := /mnt/nfs/homes/fhadhri/Documents/Perso/so_long
- 
 # makefile
 SHELL = /bin/sh
 # makefile (from 'Makefile', line 6)
@@ -236,9 +236,9 @@ VSCODE_PID = 1629565
 
 # Directories
 
-# . (device 58, inode 107875548): 14 files, no impossibilities.
+# . (device 58, inode 107875548): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -266,14 +266,14 @@ all: so_long
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-26 12:17:38.480367726
+#  Last modified 2022-08-27 10:54:30.429778693
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-23 14:49:00.599883599
+#  Last modified 2022-08-27 10:58:05.031100208
 #  File has been updated.
 #  Successfully updated.
 
@@ -291,6 +291,7 @@ fclean: clean
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 re: fclean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -310,16 +311,15 @@ clean:
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-08-26 12:17:46.606417106
+#  Last modified 2022-08-27 10:54:41.204845046
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 16):
 	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
 
- 
 so_long: main.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-26 12:17:46.816418381
+#  Last modified 2022-08-27 10:57:15.273793804
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 19):
@@ -333,12 +333,12 @@ so_long: main.o
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 195 B / avg = 7 B
-# current buf: size = 8162 B / used = 195 B / count = 26 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 207 B / avg = 7 B
+# current buf: size = 8162 B / used = 207 B / count = 27 / avg = 7 B
 
-# strcache performance: lookups = 48 / hit rate = 45%
+# strcache performance: lookups = 49 / hit rate = 44%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/48=2%
-# Finished Make data base on Sat Aug 27 10:23:31 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/49=2%
+# Finished Make data base on Sat Aug 27 10:59:06 2022
 
  

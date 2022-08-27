@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:48:14 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/07/26 13:31:36 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/27 11:28:04 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,20 +135,19 @@ char	*get_next_line(int fd)
 	return (ligne);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	int		fd;
-	char	*ligne;
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*ligne;
 
-	fd = open("LOL.txt", O_RDONLY);
-	(void)fd;
-	ligne = get_next_line(fd);
-	while (ligne != NULL)
-	{
-		printf("%s", ligne);
-		free(ligne);
-		ligne = get_next_line(fd);
-	}
-	return (0);
-}
+// 	fd = open("LOL.txt", O_RDONLY);
+// 	(void)fd;
+// 	ligne = get_next_line(fd);
+// 	while (ligne != NULL)
+// 	{
+// 		printf("%s", ligne);
+// 		free(ligne);
+// 		ligne = get_next_line(fd);
+// 	}
+// 	return (0);
+// }
