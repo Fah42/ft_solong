@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sat Aug 27 10:59:06 2022
+# Make data base, printed on Sat Aug 27 14:58:16 2022
 
 # Variables
 
@@ -19,7 +18,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
-# makefile (from 'Makefile', line 3)
+# makefile (from 'Makefile', line 12)
 OBJ = $(SRCS:.c=.o)
 # environment
 XDG_SESSION_CLASS = user
@@ -39,7 +38,7 @@ XMODIFIERS = @im=ibus
 CURDIR := /mnt/nfs/homes/fhadhri/Documents/Perso/so_long
 # makefile
 SHELL = /bin/sh
-# makefile (from 'Makefile', line 6)
+# makefile (from 'Makefile', line 15)
 RM = rm -f
 # environment
 GDM_LANG = en
@@ -47,7 +46,7 @@ GDM_LANG = en
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
-# makefile (from 'Makefile', line 7)
+# makefile (from 'Makefile', line 16)
 CFLAGS = -Wall -Wextra -Werror -I.
 # environment
 JOURNAL_STREAM = 9:6220856
@@ -95,6 +94,8 @@ ELECTRON_RUN_AS_NODE = 1
 INVOCATION_ID = 393834837af345588569934e3ecbff3b
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 6)
+LIBFT_DIR = Libft/
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/fhadhri
 # environment
@@ -146,10 +147,12 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'Makefile', line 1)
-SRCS = main.c
+SRCS = ${SRC_MAIN} ${SRC_GNL}
 # environment
 SHLVL = 1
-# makefile (from 'Makefile', line 5)
+# makefile (from 'Makefile', line 7)
+LIBFT = $(addprefix $(LIBFT_DIR), $(LIBFT_A))
+# makefile (from 'Makefile', line 14)
 CC = gcc
 # environment
 IM_CONFIG_PHASE = 1
@@ -159,6 +162,8 @@ MAKE_VERSION := 4.2.1
 USER = fhadhri
 # makefile
 .DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 19)
+INCLUDE = -Lmlx_linux -lmlx_Linux -L/usr/lib -Lminilibx-linux -lXext -lX11 -lm -lz
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -173,6 +178,8 @@ MAKE_COMMAND := make
 OLDPWD = /mnt/nfs/homes/fhadhri
 # default
 .VARIABLES := 
+# makefile (from 'Makefile', line 3)
+SRC_MAIN = main.c
 # automatic
 *F = $(notdir $*)
 # environment
@@ -191,6 +198,8 @@ MFLAGS = -pqrR
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
+# makefile (from 'Makefile', line 5)
+LIBFT_A = libft.a
 # automatic
 +F = $(notdir $+)
 # environment
@@ -199,6 +208,8 @@ QT_ACCESSIBILITY = 1
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKEFILES := 
+# makefile (from 'Makefile', line 9)
+GNL = get_next_line.c get_next_line_utils.c
 # automatic
 <F = $(notdir $<)
 # environment
@@ -213,11 +224,13 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 SUFFIXES := 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
+# makefile (from 'Makefile', line 10)
+SRC_GNL = $(addprefix Get-Next-Line/, $(GNL))
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
-# makefile (from 'Makefile', line 9)
+# makefile (from 'Makefile', line 18)
 NAME = so_long
 # default
 .RECIPEPREFIX := 
@@ -228,7 +241,7 @@ DOCKER_HOST = unix:///run/user/101776/docker.sock
 # environment
 VSCODE_PID = 1629565
 # variable set hash-table stats:
-# Load=108/1024=11%, Rehash=0, Collisions=15/137=11%
+# Load=115/1024=11%, Rehash=0, Collisions=18/147=12%
 
 # Pattern-specific Variable Values
 
@@ -237,13 +250,14 @@ VSCODE_PID = 1629565
 # Directories
 
 # . (device 58, inode 107875548): 15 files, no impossibilities.
+# Get-Next-Line (device 58, inode 107878754): 5 files, no impossibilities so far.
 
-# 15 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 %.o: %.c
-#  recipe to execute (from 'Makefile', line 16):
+#  recipe to execute (from 'Makefile', line 23):
 	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
 
 # 1 implicit rules, 0 (0.0%) terminal.
@@ -266,14 +280,24 @@ all: so_long
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-27 10:54:30.429778693
+ 
+#  Last modified 2022-08-27 13:59:58.82235832
 #  File has been updated.
 #  Successfully updated.
+
+Get-Next-Line/get_next_line_utils.o: Get-Next-Line/get_next_line_utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Get-Next-Line/get_next_line_utils'
+#  Last modified 2022-08-27 14:56:00.088105587
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-27 10:58:05.031100208
+#  Last modified 2022-08-27 14:58:05.36287109
 #  File has been updated.
 #  Successfully updated.
 
@@ -282,8 +306,24 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
+#  recipe to execute (from 'Makefile', line 33):
 				$(RM) $(NAME)
+
+# Not a target:
+Get-Next-Line/get_next_line_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-26 13:31:36.143091
+#  File has been updated.
+#  Successfully updated.
+
+Get-Next-Line/get_next_line.o: Get-Next-Line/get_next_line.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Get-Next-Line/get_next_line'
+#  Last modified 2022-08-27 14:56:00.013105129
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
 
 # Not a target:
 .DEFAULT:
@@ -291,13 +331,12 @@ fclean: clean
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 re: fclean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 30):
+#  recipe to execute (from 'Makefile', line 36):
 				make all
 
 clean:
@@ -305,40 +344,48 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-				$(RM) $(OBJS)
+#  recipe to execute (from 'Makefile', line 30):
+				$(RM) $(OBJ)
 
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-08-27 10:54:41.204845046
+#  Last modified 2022-08-27 14:55:59.938104671
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 16):
+#  recipe to execute (from 'Makefile', line 23):
 	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
 
-so_long: main.o
+so_long: main.o Get-Next-Line/get_next_line.o Get-Next-Line/get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-27 10:57:15.273793804
+#  Last modified 2022-08-27 14:56:55.151442055
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 19):
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Lminilibx-linux -lXext -lX11 -lm -lz -o $(NAME)
+#  recipe to execute (from 'Makefile', line 26):
+	@make -C ${LIBFT_DIR}
+	$(CC) $(OBJ) ${INCLUDE} -o $(NAME)
+
+# Not a target:
+Get-Next-Line/get_next_line.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-27 11:28:04.010904174
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/34=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 207 B / avg = 7 B
-# current buf: size = 8162 B / used = 207 B / count = 27 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 467 B / avg = 12 B
+# current buf: size = 8162 B / used = 467 B / count = 36 / avg = 12 B
 
-# strcache performance: lookups = 49 / hit rate = 44%
+# strcache performance: lookups = 63 / hit rate = 42%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=1/49=2%
-# Finished Make data base on Sat Aug 27 10:59:06 2022
+# Load=36/8192=0%, Rehash=0, Collisions=2/63=3%
+# Finished Make data base on Sat Aug 27 14:58:16 2022
 
  

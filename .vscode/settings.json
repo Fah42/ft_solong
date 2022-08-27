@@ -1,6 +1,7 @@
 {
 	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
-		"mlx.h": "c"
+		"mlx.h": "c",
+		"so_long.h": "c"
 	}
 }

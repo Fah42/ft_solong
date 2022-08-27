@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/27 11:29:18 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/27 15:56:05 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,31 @@ typedef struct s_data
 
 int	main(void)
 {
+	int		map_fd;
+	char	*ligne;
+	int		i;
+	int		x;
+	int		y;
 	// void	*mlx;
 	// void	*mlx_win;
-	int		map;
-	char	*ligne;
 
-	map = open("path_name.c", O_RDONLY);
-	ligne = get_next_line(map);
+	i = 0;
+	x = 0;
+	y = 0;
+	map_fd = open("map/test.ber", O_RDONLY);
+	ligne = get_next_line(map_fd);
+	while (1)
+	{
+		if (ligne[i])
+		{
+			printf("%c", ligne[i]);
+			i++;
+		}
+		else if (ligne == NULL)
+			break ;
+		else
+			ligne = get_next_line(map_fd);
+	}
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	// mlx_loop(mlx);
