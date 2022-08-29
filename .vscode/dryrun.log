@@ -1,5 +1,9 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/fhadhri/Documents/Perso/so_long'
-make: Nothing to be done for 'all'.
+gcc -I/usr/include -Lminilibx-linux -O3 -c main.c -o main.o
+gcc -I/usr/include -Lminilibx-linux -O3 -c Get-Next-Line/get_next_line.c -o Get-Next-Line/get_next_line.o
+gcc -I/usr/include -Lminilibx-linux -O3 -c Get-Next-Line/get_next_line_utils.c -o Get-Next-Line/get_next_line_utils.o
+make -C Libft/
+gcc main.o Get-Next-Line/get_next_line.o Get-Next-Line/get_next_line_utils.o -Lmlx_linux -lmlx_Linux -L/usr/lib -Lminilibx-linux -lXext -lX11 -lm -lz -o so_long
 make: Leaving directory '/mnt/nfs/homes/fhadhri/Documents/Perso/so_long'
  

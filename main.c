@@ -6,49 +6,41 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/27 15:56:05 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/29 13:48:35 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-typedef struct s_data
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_lenght;
-	int		endian;
-}			t_data;
+void	ft_get_map_height(t_data *data)
+{	
+	(*data).map_fd = open(data->map_path, O_RDONLY);
+	data->ligne = "";
+	while (data->ligne != NULL)
+	{
+		data->ligne = get_next_line(data->map_fd);
+		printf("%s", data->ligne);
+		data->y++;
+		free(data->ligne);
+	}
+	close(data->map_fd);
+}
 
+void	ft_fill_map(t_data *data)
+{
+	ft_get_map_height(data);
+	data->map = malloc(sizeof(data->map) * data->y + 1);
+	if (!data->map)
+		return ;
+	data->map[data->y + 1] = NULL;
+}
 
 int	main(void)
 {
-	int		map_fd;
-	char	*ligne;
-	int		i;
-	int		x;
-	int		y;
-	// void	*mlx;
-	// void	*mlx_win;
+	t_data	game;
 
-	i = 0;
-	x = 0;
-	y = 0;
-	map_fd = open("map/test.ber", O_RDONLY);
-	ligne = get_next_line(map_fd);
-	while (1)
-	{
-		if (ligne[i])
-		{
-			printf("%c", ligne[i]);
-			i++;
-		}
-		else if (ligne == NULL)
-			break ;
-		else
-			ligne = get_next_line(map_fd);
-	}
+	game.map_path = "map/test.ber";
+	ft_fill_map(&game);
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	// mlx_loop(mlx);
