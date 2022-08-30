@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:48:14 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/27 11:28:04 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/30 16:55:15 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,13 @@ static char	*ft_read(int fd, char *buffer, char *tmp, char *str)
 	int	bytes_read;
 
 	bytes_read = 1;
-	while (1)
+	while (42)
 	{
 		if (str != NULL && (ft_newline(str) == 1 || bytes_read == 0))
 			break ;
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
-		{
-			free(buffer);
-			return (NULL);
-		}
+			ft_free(buffer);
 		buffer[bytes_read] = '\0';
 		tmp = str;
 		if (tmp == NULL)
