@@ -7,7 +7,7 @@ LIBFT_DIR 		= Libft/
 LIBFT			= $(addprefix $(LIBFT_DIR), $(LIBFT_A))
 
 GNL 			= get_next_line.c get_next_line_utils.c
-SRC_GNL 		= $(addprefix Get-Next-Line/, $(GNL))
+SRC_GNL 		= $(addprefix Julien/, $(GNL))
 
 OBJ				= $(SRCS:.c=.o)
 

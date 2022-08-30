@@ -1,6 +1,7 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/fhadhri/Documents/Perso/so_long'
 gcc -I/usr/include -Lminilibx-linux -O3 -c main.c -o main.o
+ 
 gcc -I/usr/include -Lminilibx-linux -O3 -c Get-Next-Line/get_next_line.c -o Get-Next-Line/get_next_line.o
 gcc -I/usr/include -Lminilibx-linux -O3 -c Get-Next-Line/get_next_line_utils.c -o Get-Next-Line/get_next_line_utils.o
 make -C Libft/

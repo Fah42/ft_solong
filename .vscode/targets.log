@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 27 14:58:16 2022
+# Make data base, printed on Tue Aug 30 10:49:37 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ _ = /usr/share/code/code
 # makefile (from 'Makefile', line 16)
 CFLAGS = -Wall -Wextra -Werror -I.
 # environment
-JOURNAL_STREAM = 9:6220856
+JOURNAL_STREAM = 9:7297117
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -67,13 +67,13 @@ XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/fhadhri/.local
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101776/bus
 # environment
-MANAGERPID = 1626166
+MANAGERPID = 1281162
 # environment
 VSCODE_CWD = /mnt/nfs/homes/fhadhri
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session16
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session21
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101776_Mc20ha
+KRB5CCNAME = FILE:/tmp/krb5cc_101776_j60iiU
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +83,7 @@ GPG_AGENT_INFO = /run/user/101776/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r12p13.clusters.42paris.fr:@/tmp/.ICE-unix/1626701,unix/e1r12p13.clusters.42paris.fr:/tmp/.ICE-unix/1626701
+SESSION_MANAGER = local/e1r12p10.clusters.42paris.fr:@/tmp/.ICE-unix/1281686,unix/e1r12p10.clusters.42paris.fr:/tmp/.ICE-unix/1281686
 # environment
 XDG_RUNTIME_DIR = /run/user/101776
 # environment
@@ -91,7 +91,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 393834837af345588569934e3ecbff3b
+INVOCATION_ID = 03d7e0fc6db7422a8e770c5852f90971
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 6)
@@ -105,7 +105,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101776/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1629565
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1282014
 # automatic
 %F = $(notdir $%)
 # environment
@@ -115,7 +115,7 @@ PWD = /mnt/nfs/homes/fhadhri/Documents/Perso/so_long
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1626665
+SSH_AGENT_PID = 1281650
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -239,9 +239,9 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/101776/docker.sock
 # environment
-VSCODE_PID = 1629565
+VSCODE_PID = 1282014
 # variable set hash-table stats:
-# Load=115/1024=11%, Rehash=0, Collisions=18/147=12%
+# Load=115/1024=11%, Rehash=0, Collisions=18/151=12%
 
 # Pattern-specific Variable Values
 
@@ -249,10 +249,9 @@ VSCODE_PID = 1629565
 
 # Directories
 
-# . (device 58, inode 107875548): 15 files, no impossibilities.
-# Get-Next-Line (device 58, inode 107878754): 5 files, no impossibilities so far.
+# . (device 59, inode 107875548): 15 files, no impossibilities.
 
-# 20 files, no impossibilities in 2 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -270,7 +269,9 @@ all: so_long
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
@@ -279,20 +280,17 @@ all: so_long
 
 # Not a target:
 main.c:
-#  Implicit rule search has been done.
  
-#  Last modified 2022-08-27 13:59:58.82235832
+#  Implicit rule search has been done.
+#  Last modified 2022-08-29 13:48:35.445696074
 #  File has been updated.
 #  Successfully updated.
 
-Get-Next-Line/get_next_line_utils.o: Get-Next-Line/get_next_line_utils.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Get-Next-Line/get_next_line_utils'
-#  Last modified 2022-08-27 14:56:00.088105587
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
+# Not a target:
+Get-Next-Line/get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -310,20 +308,10 @@ fclean: clean
 				$(RM) $(NAME)
 
 # Not a target:
-Get-Next-Line/get_next_line_utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-26 13:31:36.143091
-#  File has been updated.
-#  Successfully updated.
-
-Get-Next-Line/get_next_line.o: Get-Next-Line/get_next_line.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Get-Next-Line/get_next_line'
-#  Last modified 2022-08-27 14:56:00.013105129
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
+Get-Next-Line/get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -350,42 +338,55 @@ clean:
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-08-27 14:55:59.938104671
+#  Last modified 2022-08-29 12:28:26.07443127
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := main.o
+# automatic
+# % := 
+# automatic
+# * := main
+# automatic
+# + := main.c
+# automatic
+# | := 
+# automatic
+# < := main.c
+# automatic
+# ^ := main.c
+# automatic
+# ? := main.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -I/usr/include -Lminilibx-linux -O3 -c $< -o $@
 
 so_long: main.o Get-Next-Line/get_next_line.o Get-Next-Line/get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-27 14:56:55.151442055
+#  Last modified 2022-08-29 12:28:26.330432823
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  recipe to execute (from 'Makefile', line 26):
 	@make -C ${LIBFT_DIR}
 	$(CC) $(OBJ) ${INCLUDE} -o $(NAME)
 
-# Not a target:
-Get-Next-Line/get_next_line.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-27 11:28:04.010904174
-#  File has been updated.
-#  Successfully updated.
-
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/46=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/38=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 467 B / avg = 12 B
-# current buf: size = 8162 B / used = 467 B / count = 36 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 273 B / avg = 9 B
+# current buf: size = 8162 B / used = 273 B / count = 29 / avg = 9 B
 
-# strcache performance: lookups = 63 / hit rate = 42%
+# strcache performance: lookups = 51 / hit rate = 43%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=2/63=3%
-# Finished Make data base on Sat Aug 27 14:58:16 2022
+# Load=29/8192=0%, Rehash=0, Collisions=1/51=2%
+# Finished Make data base on Tue Aug 30 10:49:37 2022
 
  

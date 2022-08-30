@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/29 12:10:46 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/08/30 14:34:22 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 
 typedef struct s_data
 {
-	void	*img;
 	char	*addr;
 	char	*map_path;
+	char	*ligne;
+	char	**map;
 	int		bits_per_pixel;
 	int		line_lenght;
-	void	*mlx;
-	void	*mlx_win;
 	int		map_fd;
-	char	*ligne;
+	int		map_fd2;
 	int		i;
 	int		x;
 	int		y;
-	char	**map;
+	void	*mlx;
+	void	*mlx_win;
+	void	*img;
 }			t_data;
 
 
