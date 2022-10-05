@@ -6,13 +6,16 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:13:09 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/05/19 14:52:59 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/05 11:25:30 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+#  define MAXFILES FOPEN_MAX
+# endif
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -46,7 +49,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 
-void			*ft_memcpy(void *dst, const void *src, size_t n);
+// void			*ft_memcpy_true(void *dst, const void *src, size_t n);
 
 void			*ft_memmove(void *dst, const void *src, size_t len);
 
@@ -108,6 +111,12 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 
 void			ft_lstiter(t_list *lst, void (*f)(void *));
+
+char			*get_next_line(int fd);
+
+int				ft_found_nl(char *s);
+
+void			*ft_memcpy(void *dest, const void *src, size_t n);
 
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));

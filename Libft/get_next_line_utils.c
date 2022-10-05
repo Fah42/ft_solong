@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchene <juchene@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 14:46:31 by juchene           #+#    #+#             */
-/*   Updated: 2022/06/13 15:20:28 by juchene          ###   ########.fr       */
+/*   Created: 2022/06/01 14:46:31 by fhadhri           #+#    #+#             */
+/*   Updated: 2022/10/03 12:54:43 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
-
-int	ft_strlen(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (*s++)
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 int	ft_found_nl(char *s)
 {

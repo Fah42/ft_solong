@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   ft_memcpy_true.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 09:44:58 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/06/27 09:45:17 by fhadhri          ###   ########.fr       */
+/*   Created: 2022/05/04 07:53:50 by fhadhri           #+#    #+#             */
+/*   Updated: 2022/10/05 09:47:55 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <string.h>
-# include <fcntl.h>
+void	*ft_memcpy_true(void *dest, const void *src, size_t n)
+{
+	char		*str;
+	char		*dd;
 
-char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_newline(const char *str);
-void	free_set_nul(char *str);
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 0
-# endif
-
-#endif
+	str = (char *)src;
+	dd = (char *)dest;
+	if (!src && !dest)
+		return (NULL);
+	while (n--)
+	{
+		dd[n] = str[n];
+	}
+	return (dd);
+}

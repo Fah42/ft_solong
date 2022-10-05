@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juchene <juchene@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 14:26:36 by juchene           #+#    #+#             */
-/*   Updated: 2022/08/24 11:44:03 by juchene          ###   ########.fr       */
+/*   Created: 2022/05/30 14:26:36 by fhadhri           #+#    #+#             */
+/*   Updated: 2022/10/05 11:41:02 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*ft_buff_adjust(char *s, size_t n)
 {
@@ -20,8 +20,10 @@ char	*ft_buff_adjust(char *s, size_t n)
 	i = 0;
 	l = ft_strlen(s + n);
 	if (i < l)
+	{
 		ft_memcpy(s, s + n, l);
-	while ((i + l) < BUFFER_SIZE && s[i + l])
+	}
+	while (i + l < (size_t)BUFFER_SIZE && s[i + l] != '\0')
 	{
 		s[i + l] = 0;
 		i++;
@@ -35,7 +37,8 @@ static	char	*ft_line_builder(char *line, char *buff)
 	size_t	len_line;
 	char	*build;
 
-	len_line = ft_strlen(line);
+	if (line != NULL)
+		len_line = ft_strlen(line);
 	len = 0;
 	while (buff[len] != '\n' && buff[len])
 		len++;
@@ -58,7 +61,7 @@ static	char	*ft_line_builder(char *line, char *buff)
 
 char	*get_next_line(int fd)
 {
-	static char	buff[BUFFER_SIZE + 1];
+	static char	buff[MAXFILES][BUFFER_SIZE + 1] = {0};
 	char		*line;
 	int			oct_readed;
 
@@ -68,12 +71,12 @@ char	*get_next_line(int fd)
 		return (NULL);
 	while (!ft_found_nl(line) && oct_readed != 0)
 	{
-		if (!buff[0])
+		if (!buff[fd][0])
 		{
-			oct_readed = read(fd, buff, BUFFER_SIZE);
-			buff[oct_readed] = 0;
+			oct_readed = read(fd, buff[fd], BUFFER_SIZE);
+			buff[fd][oct_readed] = 0;
 		}
-		line = ft_line_builder(line, buff);
+		line = ft_line_builder(line, buff[fd]);
 		if (!line)
 			break ;
 	}

@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/30 16:00:59 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/05 11:54:50 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_get_map_height(t_data *data)
 {
-	data->y = 0;	
-	(*data).map_fd = open(data->map_path, O_RDONLY);
+	data->y = 0;
+	data->map_fd = open("data->map_path", O_RDONLY);
 	data->ligne = "";
 	while (data->ligne != NULL)
 	{
@@ -25,7 +25,6 @@ void	ft_get_map_height(t_data *data)
 		free(data->ligne);
 	}
 	data->y -= 1;
-	printf(" - data->y : [%d]\n", data->y);
 	close(data->map_fd);
 }
 
@@ -35,21 +34,21 @@ void	ft_fill_map(t_data *data)
 
 	i = 0;
 	ft_get_map_height(data);
-	data->map = malloc(sizeof(data->map) * data->y + 1);
-	if (!data->map)
-		return ;
-	data->map[data->y + 1] = NULL;
-	data->map_fd = open(data->map_path, O_RDONLY);
-	while (i < data->y)
-	{
-		data->map[i] = get_next_line(data->map_fd);
-		printf("%s", data->map[i]);
-		free(data->map[i]);
-		i++;
-	}
-	free(data->map);
-	data->y -= 1;
-	close(data->map_fd);
+	// data->map = malloc(sizeof(data->map) * data->y + 1);
+	// if (!data->map)
+	// 	return ;
+	// data->map[data->y + 1] = NULL;
+	// data->map_fd = open(data->map_path, O_RDONLY);
+	// while (i < data->y)
+	// {
+	// 	data->map[i] = get_next_line(data->map_fd);
+	// 	printf("%s", data->map[i]);
+	// 	free(data->map[i]);
+	// 	i++;
+	// }
+	// free(data->map);
+	// data->y -= 1;
+	// close(data->map_fd);
 }
 
 int	main(void)

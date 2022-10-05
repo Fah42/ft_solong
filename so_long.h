@@ -6,12 +6,16 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/08/30 14:34:22 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/05 09:07:44 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# include <fcntl.h>
+# include "minilibx-linux/mlx.h"
+# include "Libft/libft.h"
+# include <stdlib.h>
 
 typedef struct s_data
 {
@@ -30,13 +34,5 @@ typedef struct s_data
 	void	*mlx_win;
 	void	*img;
 }			t_data;
-
-
-
-# include "minilibx-linux/mlx.h"
-# include "Libft/libft.h"
-# include "ft_printf/ft_printf.h"
-# include "Get-Next-Line/get_next_line.h"
-# include <stdlib.h>
 
 #endif
