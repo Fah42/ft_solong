@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/05 09:07:44 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/06 14:24:17 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,14 @@ typedef struct s_data
 	void	*mlx_win;
 	void	*img;
 }			t_data;
+
+typedef struct s_env
+{
+	int	player;
+	int	exit;
+	int	collectible;
+	int	bad_char;
+	int osef;
+}	t_env;
 
 #endif

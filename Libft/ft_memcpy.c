@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy_true.c                                   :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 07:53:50 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/05 09:47:55 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/06 11:26:41 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy_true(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char		*str;
-	char		*dd;
+	size_t	i;
 
-	str = (char *)src;
-	dd = (char *)dest;
-	if (!src && !dest)
-		return (NULL);
-	while (n--)
+	i = 0;
+	while (src != NULL && i < n)
 	{
-		dd[n] = str[n];
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
 	}
-	return (dd);
+	return (dest);
 }

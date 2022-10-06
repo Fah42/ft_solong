@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:46:31 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/03 12:54:43 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/06 10:53:05 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,19 @@ int	ft_found_nl(char *s)
 	return (nl);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+
+size_t	ft_strlen_prtctd(const char *s)
 {
-	size_t	i;
+	const char	*str;
+	int			i;
 
 	i = 0;
-	while (src != NULL && i < n)
+	str = s;
+	if (!s)
+		return (0);
+	while (str[i] != '\0')
 	{
-		((char *)dest)[i] = ((char *)src)[i];
 		i++;
 	}
-	return (dest);
+	return (i);
 }

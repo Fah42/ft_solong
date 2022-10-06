@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:26:36 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/05 11:41:02 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/06 10:54:58 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ static	char	*ft_line_builder(char *line, char *buff)
 	size_t	len_line;
 	char	*build;
 
-	if (line != NULL)
-		len_line = ft_strlen(line);
+	len_line = ft_strlen_prtctd(line);
 	len = 0;
 	while (buff[len] != '\n' && buff[len])
 		len++;
