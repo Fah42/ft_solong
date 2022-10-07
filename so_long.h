@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fah <fah@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/07 13:42:06 by fah              ###   ########.fr       */
+/*   Updated: 2022/10/07 16:32:18 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_data
 	char	*map_path;
 	char	*ligne;
 	char	**map;
+	char	**map_test;
 	int		bits_per_pixel;
 	int		line_lenght;
 	int		map_fd;

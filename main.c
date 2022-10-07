@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fah <fah@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/07 13:41:55 by fah              ###   ########.fr       */
+/*   Updated: 2022/10/07 16:40:24 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,22 @@ C pour un item à collecter (C pour collectible),
 E pour une sortie (E pour exit),
 P pour la position de départ du personnage */
 
+// int	ft_pathfind(int i, int j)
+// {
+// 	 t_data data;
+
+	 
+// 	if ( == '0')
+// 	{
+// 		if (ft_pathfind(i, j+1) == '0') 
+// 			return 1;
+// 		if (ft_pathfind(i+1, j) == '0')
+// 			return 1;
+// 	}
+// 	/* faire un if qui empeche de sortir de la map */
+
+// 	/* creer un tableau */	
+// }
 /* 1 : creer une fonction qui compte le nombre d'item, de sortie et de Player DONE
 2 : verifier les valeurs de map afin qu'elle n'est pas de caractere invalide. DONE */
 
@@ -86,10 +102,8 @@ int ft_check_bad_char(t_data *data, t_env *env)
 		j = 0;
 		while (data->map[i][j])
 		{
-			/* Je verifie que je n'ai pas autres choses que des 1 sur la premiere ligne */
 			if (i == 0 && (data->map[i][j] != '1' && data->map[i][j] != '\n'))
 				return (1);
-			/* Je verifie que je n'ai pas autres choses que des 1 sur la derniere ligne */
 			if (i == data->y && (data->map[i][j] != '1' && data->map[i][j] != '\n'))
 				return (1);
 			if (data->map[i][j] == 'C')
@@ -159,7 +173,7 @@ int	main(void)
 	game.map_path = "map/test.ber";
 	ft_fill_map(&game);
 	printf("valeur de retour de bad_char : [%i]\n", ft_check_bad_char(&game, &env));
-	printf("valeur de retour de is_square : [%i]\n", ft_is_square(&game, &error));
+	printf("valeur de retour de is_square : [%i]\n", ft_is_square(&game));
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	// mlx_loop(mlx);
