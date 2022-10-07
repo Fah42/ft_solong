@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fah <fah@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/06 14:24:59 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/07 13:41:55 by fah              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,57 @@ E pour une sortie (E pour exit),
 P pour la position de départ du personnage */
 
 /* 1 : creer une fonction qui compte le nombre d'item, de sortie et de Player DONE
-2 : verifier les valeurs de map afin qu'elle n'est pas de caractere invalide. TODO */
+2 : verifier les valeurs de map afin qu'elle n'est pas de caractere invalide. DONE */
 
-void	ft_count_pec(t_data *data, t_env *env)
+/* Pour verfier que j'ai un carre, je dois avoir le cote 'a' de meme taille que le cote 'c' et le cote 'b' de meme taille que le cote 'd'*/
+/* */
+int ft_is_square(t_data *data)
+{
+	int	i;
+	int	j;
+	int check_first_ligne;
+	int check_last_ligne;
+	int check_first_column;
+	int check_last_column;
+
+	i = 0;
+	j = 0;
+	check_first_ligne = 0;
+	check_last_ligne = 0;
+	check_first_column = 0;
+	check_last_column = 0;
+	data->x = ft_strlen_ret(data->map[0]) - 1;
+	if (!data->map)
+		return 2;
+	while (data->map[i])
+	{
+		j = 0;
+		while(data->map[i][j])
+		{
+			if (i == 0 && (data->map[i][j] == '1' || data->map[i][j] == '\n'))
+				check_first_ligne++;
+			if (i == data->y && (data->map[i][j] == '1' || data->map[i][j] == '\n'))
+				check_last_ligne++;
+			if (j == 0 && (data->map[i][j] == '1'))
+				check_first_column++;
+			if (j == data->x && (data->map[i][j] == '1' || data->map[i][j] == '\n'))
+				check_last_column++;
+			j++;
+		}
+		i++;
+	}
+	printf("checkfirstligne = [%i]\n", check_first_ligne);
+	printf("checklastligne = [%i]\n", check_last_ligne);
+	printf("checkfirstcol = [%i]\n", check_first_column);
+	printf("checklastcol = [%i]\n", check_last_column);
+	if (check_first_ligne != check_last_ligne)
+		return (1);
+	if (check_first_column != check_last_column)
+		return (1);
+	return (0);
+}
+
+int ft_check_bad_char(t_data *data, t_env *env)
 {
 	int	i;
 	int	j;
@@ -32,12 +80,18 @@ void	ft_count_pec(t_data *data, t_env *env)
 	env->player = 0;
 	env->bad_char = 0;
 	if (!data->map)
-		return ;
+		return 1;
 	while (data->map[i])
 	{
 		j = 0;
 		while (data->map[i][j])
 		{
+			/* Je verifie que je n'ai pas autres choses que des 1 sur la premiere ligne */
+			if (i == 0 && (data->map[i][j] != '1' && data->map[i][j] != '\n'))
+				return (1);
+			/* Je verifie que je n'ai pas autres choses que des 1 sur la derniere ligne */
+			if (i == data->y && (data->map[i][j] != '1' && data->map[i][j] != '\n'))
+				return (1);
 			if (data->map[i][j] == 'C')
 				env->collectible++;
 			else if (data->map[i][j] == 'E')
@@ -45,14 +99,15 @@ void	ft_count_pec(t_data *data, t_env *env)
 			else if (data->map[i][j] == 'P')
 				env->player++;
 			else if (data->map[i][j] == '0' || data->map[i][j] == '1' || data->map[i][j] == '\n')
-				env->osef++;
+				env->wall++;
 			else
 				env->bad_char++;
 			j++;
 		}
 		i++;
 	}
-	printf("[%i], [%i], [%i], [%i]", env->player, env->exit, env->collectible, env->bad_char);
+	printf("\n\nNombre de player : [%i]\nNombre de sortie : [%i]\nNombre de collectible : [%i] \nCaracteres incorrect : [%i] \n\n", env->player, env->exit, env->collectible, env->bad_char);
+	return (0);
 }
 
 void	ft_get_map_height(t_data *data)
@@ -103,7 +158,8 @@ int	main(void)
 
 	game.map_path = "map/test.ber";
 	ft_fill_map(&game);
-	ft_count_pec(&game, &env);
+	printf("valeur de retour de bad_char : [%i]\n", ft_check_bad_char(&game, &env));
+	printf("valeur de retour de is_square : [%i]\n", ft_is_square(&game, &error));
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	// mlx_loop(mlx);

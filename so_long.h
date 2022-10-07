@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fah <fah@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/06 14:24:17 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/07 13:42:06 by fah              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,16 @@ typedef struct s_env
 	int	exit;
 	int	collectible;
 	int	bad_char;
-	int osef;
+	int wall;
 }	t_env;
 
+int	ft_strlen_ret(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\n')
+		i++;
+	return (i);
+}
 #endif
