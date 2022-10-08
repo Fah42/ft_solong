@@ -1,4 +1,4 @@
-SRC_MAIN		= main.c
+SRC_MAIN		= main.c check_map.c
 SRCS			= ${SRC_MAIN}
 
 LIBFT_DIR 		= ../Libft/

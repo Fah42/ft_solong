@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/08 22:24:32 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/08 22:49:24 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "../minilibx-linux/mlx.h"
 # include "../Libft/libft.h"
 
-void    ft_pathfind(void);
 typedef struct s_data
 {
 	char	*addr;
@@ -49,13 +48,5 @@ typedef struct s_env
 	int wall;
 }	t_env;
 
-int	ft_strlen_ret(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i] != '\n')
-		i++;
-	return (i);
-}
 #endif
