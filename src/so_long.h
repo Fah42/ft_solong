@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/08 22:49:24 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/10 14:56:06 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ typedef struct s_data
 	char	*addr;
 	char	*map_path;
 	char	*ligne;
+	char	*ligne_copy;
 	char	**map;
-	char	**map_test;
+	char	**map_copy;
 	int		bits_per_pixel;
 	int		line_lenght;
 	int		map_fd;
@@ -34,6 +35,7 @@ typedef struct s_data
 	int		i;
 	int		x;
 	int		y;
+	int		yy;
 	void	*mlx;
 	void	*mlx_win;
 	void	*img;

@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 22:43:32 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/08 22:50:51 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/10 14:11:17 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,27 @@ int ft_is_square(t_data *data)
 	check_last_column = 0;
 	data->x = ft_strlen_ret(data->map[0]) - 1;
 	if (!data->map)
-		return 2;
+		return (2);
 	while (data->map[i])
 	{
 		j = 0;
-		while(data->map[i][j])
+		while (data->map[i][j])
 		{
-			if (i == 0 && (data->map[i][j] == '1' || data->map[i][j] == '\n'))
+			if (i == 0 && (data->map[i][j] == '1'
+				|| data->map[i][j] == '\n'))
 				check_first_line++;
-			if (i == data->y && (data->map[i][j] == '1' || data->map[i][j] == '\n'))
+			if (i == data->y && (data->map[i][j] == '1'
+				|| data->map[i][j] == '\n'))
 				check_last_line++;
 			if (j == 0 && (data->map[i][j] == '1'))
 				check_first_column++;
-			if (j == data->x && (data->map[i][j] == '1' || data->map[i][j] == '\n'))
+			if (j == data->x && (data->map[i][j] == '1'
+				|| data->map[i][j] == '\n'))
 				check_last_column++;
 			j++;
 		}
 		i++;
 	}
-	printf("checkfirstline = [%i]\n", check_first_line);
-	printf("checklastline = [%i]\n", check_last_line);
-	printf("checkfirstcol = [%i]\n", check_first_column);
-	printf("checklastcol = [%i]\n", check_last_column);
 	if (check_first_line != check_last_line)
 		return (1);
 	if (check_first_column != check_last_column)
@@ -65,15 +64,17 @@ int ft_check_bad_char(t_data *data, t_env *env)
 
 	i = 0;
 	if (!data->map)
-		return 1;
+		return (1);
 	while (data->map[i])
 	{
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (i == 0 && (data->map[i][j] != '1' && data->map[i][j] != '\n'))
+			if (i == 0 && (data->map[i][j] != '1'
+				&& data->map[i][j] != '\n'))
 				return (1);
-			if (i == data->y && (data->map[i][j] != '1' && data->map[i][j] != '\n'))
+			if (i == data->y && (data->map[i][j] != '1'
+				&& data->map[i][j] != '\n'))
 				return (1);
 			if (data->map[i][j] == 'C')
 				env->collectible++;
@@ -81,7 +82,9 @@ int ft_check_bad_char(t_data *data, t_env *env)
 				env->exit++;
 			else if (data->map[i][j] == 'P')
 				env->player++;
-			else if (data->map[i][j] == '0' || data->map[i][j] == '1' || data->map[i][j] == '\n')
+			else if (data->map[i][j] == '0'
+					|| data->map[i][j] == '1'
+					|| data->map[i][j] == '\n')
 				env->wall++;
 			else
 				env->bad_char++;

@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/08 22:50:45 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/10 15:19:59 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ P pour la position de départ du personnage */
 /* 1 : creer une fonction qui compte le nombre d'item, de sortie et de Player DONE
 2 : verifier les valeurs de map afin qu'elle n'est pas de caractere invalide. DONE */
 
-
-
 int	main(void)
 {
 	t_data	game;
@@ -36,5 +34,8 @@ int	main(void)
 	ft_fill_map(&game);
 	printf("valeur de retour de bad_char : [%i]\n", ft_check_bad_char(&game, &env));
 	printf("valeur de retour de is_square : [%i]\n", ft_is_square(&game));
+	printf("FIN DE LA PARTIE 1\n");
+	printf("DEBUT DE PATHFINDING\n");
+	printf("MA MAP EST VALIDE ? %i\n", ft_pathfind(0, 0, &game));
 	return (0);
 }
