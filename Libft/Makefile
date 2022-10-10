@@ -6,7 +6,7 @@
 #    By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 16:12:57 by fhadhri           #+#    #+#              #
-#    Updated: 2022/10/06 10:57:05 by fhadhri          ###   ########.fr        #
+#    Updated: 2022/10/08 22:47:34 by fhadhri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 					ft_itoa.c  ft_putendl_fd.c ft_strchr.c  ft_strlcpy.c ft_memcpy.c \
 					ft_strnstr.c ft_tolower.c ft_bzero.c  ft_isascii.c ft_striteri.c \
 					ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
-					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
+					ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  ft_strlen_mod.c \
 					ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c get_next_line_utils.c get_next_line.c \
 
 BONUS			=	ft_lstnew.c \

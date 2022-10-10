@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:13:09 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/06 10:56:48 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/08 22:48:13 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,5 +121,7 @@ void			*ft_memcpy(void *dest, const void *src, size_t n);
 
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+
+int				ft_strlen_ret(char *str);
 
 #endif
