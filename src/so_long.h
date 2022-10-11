@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 12:47:42 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 15:13:51 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_env
 	int	collectible;
 	int	bad_char;
 	int wall;
+	int	collected;
+	int	exit_founded;
 }	t_env;
 
 int		ft_pathfind(int i, int j, t_data *data, t_env *env);

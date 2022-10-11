@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 12:47:26 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 15:47:14 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,16 @@ int	main(void)
 	t_data	game;
 	t_env	env;
 
-	env.collectible = 0;
-	env.exit = 0;
-	env.player = 0;
-	env.bad_char = 0;
+	ft_memset(&env, 0, sizeof(t_env));
 	game.map_path = "../map/test.ber";
+	printf("Affichage de la map : \n\n");
 	ft_fill_map(&game);
+	printf("Affichage de la map copie : \n\n");
 	ft_fill_map2(&game);
 	printf("valeur de retour de bad_char : [%i]\n", ft_check_bad_char(&game, &env));
 	printf("valeur de retour de is_square : [%i]\n", ft_is_square(&game));
 	printf("FIN DE LA PARTIE 1\n");
 	printf("DEBUT DE PATHFINDING\n");
-	printf("MA MAP EST VALIDE ? %i\n", ft_pathfind(1, 1, &game, &env));
+	printf("MA MAP EST VALIDE ? [%d]\n", ft_pathfind(1, 1, &game, &env));
 	return (0);
 }
