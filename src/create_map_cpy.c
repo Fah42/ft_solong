@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:07:15 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/10 15:07:27 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 11:09:49 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_fill_map2(t_data *data)
 
 	i = 0;
 	ft_get_map_height2(data);
-	data->map_copy = malloc(sizeof(data->map_copy) * data->yy + 1);
+	data->map_copy = ft_calloc(sizeof(data->map_copy) , (data->yy + 2));
 	if (!data->map_copy)
 		return ;
 	data->map_copy[data->yy + 1] = NULL;

@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/10 14:56:06 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 12:47:42 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ typedef struct s_env
 	int wall;
 }	t_env;
 
-
+int		ft_pathfind(int i, int j, t_data *data, t_env *env);
+int		ft_is_square(t_data *data);
+int		ft_check_bad_char(t_data *data, t_env *env);
+void	ft_get_map_height(t_data *data);
+void	ft_fill_map(t_data *data);
+void	ft_get_map_height2(t_data *data);
+void	ft_fill_map2(t_data *data);
 #endif

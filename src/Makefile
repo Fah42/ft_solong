@@ -7,14 +7,14 @@ OBJ				= $(SRCS:.c=.o)
 
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -g3
+CFLAGS			= -Wall -Wextra -Werror -g
 
 NAME			= a.out
 INCLUDE			= -L../mlx_linux -lmlx_Linux -L/usr/lib -L../minilibx-linux -lXext -lX11 -lm
 all:			$(NAME)
 
 %.o: %.c
-	$(CC) -I/usr/include -Lminilibx-linux -c $< -o $@
+	$(CC) $(CFLAGS) -I/usr/include -Lminilibx-linux -c $< -o $@
 
 $(NAME): $(OBJ)
 	@make -C ${LIBFT_DIR}
