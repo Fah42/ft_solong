@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 15:13:51 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 18:07:01 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_data
 	void	*mlx;
 	void	*mlx_win;
 	void	*img;
+	int		error;
+	int	is_path_valid;
 }			t_data;
 
 typedef struct s_env
@@ -59,4 +61,5 @@ void	ft_get_map_height(t_data *data);
 void	ft_fill_map(t_data *data);
 void	ft_get_map_height2(t_data *data);
 void	ft_fill_map2(t_data *data);
+int		ft_manage_error(t_env *env);
 #endif

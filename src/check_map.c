@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 22:43:32 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 11:08:41 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 17:51:59 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int ft_check_bad_char(t_data *data, t_env *env)
 		}
 		i++;
 	}
-	printf("\n\nNombre de player : [%i]\nNombre de sortie : [%i]\nNombre de collectible : [%i] \nCaracteres incorrect : [%i] \n\n", env->player, env->exit, env->collectible, env->bad_char);
 	return (0);
 }
 
@@ -127,7 +126,6 @@ void	ft_fill_map(t_data *data)
 	while (i < data->y)
 	{
 		data->map[i] = get_next_line(data->map_fd);
-		printf("%s", data->map[i]);
 		// free(data->map[i]);
 		i++;
 	}

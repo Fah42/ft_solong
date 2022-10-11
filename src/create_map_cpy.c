@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:07:15 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 11:09:49 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 17:52:10 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_fill_map2(t_data *data)
 	while (i < data->yy)
 	{
 		data->map_copy[i] = get_next_line(data->map_fd2);
-		printf("%s", data->map_copy[i]);
 		// free(data->map[i]);
 		i++;
 	}
