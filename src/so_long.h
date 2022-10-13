@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 18:07:01 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:03:25 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_data
 	void	*mlx_win;
 	void	*img;
 	int		error;
-	int	is_path_valid;
+	int		is_path_valid;
 }			t_data;
 
 typedef struct s_env
@@ -49,13 +49,23 @@ typedef struct s_env
 	int	exit;
 	int	collectible;
 	int	bad_char;
-	int wall;
+	int	wall;
 	int	collected;
 	int	exit_founded;
+	int	player_x;
+	int	player_y;
 }	t_env;
 
+typedef struct s_check_line
+{
+	int	check_first_line;
+	int	check_last_line;
+	int	check_first_column;
+	int	check_last_column;
+}	t_check_line;
+
 int		ft_pathfind(int i, int j, t_data *data, t_env *env);
-int		ft_is_square(t_data *data);
+int		ft_is_square(t_data *data, t_check_line *check_line);
 int		ft_check_bad_char(t_data *data, t_env *env);
 void	ft_get_map_height(t_data *data);
 void	ft_fill_map(t_data *data);

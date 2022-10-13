@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 19:09:38 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:02:06 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ dans ft_check_bad_char et ft_check_map :
 */
 int	main(void)
 {
-	t_data	game;
-	t_env	env;
+	t_data			game;
+	t_env			env;
+	t_check_line	check_line;
 
 	ft_memset(&env, 0, sizeof(t_env));
 	game.map_path = "../map/test.ber";
@@ -35,7 +36,7 @@ int	main(void)
 		printf("Bad characters used in the map.");
 		return (0);
 	}
-	if (ft_is_square(&game))
+	if (ft_is_square(&game, &check_line))
 	{
 		printf("Map is not a square");
 		return (0);
@@ -43,7 +44,7 @@ int	main(void)
 	game.error = ft_manage_error(&env);
 	if (game.error)
 		return (0);
-	game.is_path_valid = ft_pathfind(2, 2, &game, &env);
+	game.is_path_valid = ft_pathfind(env.player_x, env.player_y, &game, &env);
 	if (game.is_path_valid)
 		printf("Path is valid");
 	else

@@ -6,27 +6,19 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 22:43:32 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 17:51:59 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/13 21:01:25 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_is_square(t_data *data)
+int ft_is_square(t_data *data, t_check_line *check)
 {
 	int	i;
 	int	j;
-	int check_first_line;
-	int check_last_line;
-	int check_first_column;
-	int check_last_column;
 
 	i = 0;
 	j = 0;
-	check_first_line = 0;
-	check_last_line = 0;
-	check_first_column = 0;
-	check_last_column = 0;
 	data->x = ft_strlen_ret(data->map[0]) - 1;
 	if (!data->map)
 		return (2);
@@ -37,22 +29,22 @@ int ft_is_square(t_data *data)
 		{
 			if (i == 0 && (data->map[i][j] == '1'
 				|| data->map[i][j] == '\n'))
-				check_first_line++;
+				check->check_first_line++;
 			if (i == data->y && (data->map[i][j] == '1'
 				|| data->map[i][j] == '\n'))
-				check_last_line++;
+				check->check_last_line++;
 			if (j == 0 && (data->map[i][j] == '1'))
-				check_first_column++;
+				check->check_first_column++;
 			if (j == data->x && (data->map[i][j] == '1'
 				|| data->map[i][j] == '\n'))
-				check_last_column++;
+				check->check_last_column++;
 			j++;
 		}
 		i++;
 	}
-	if (check_first_line != check_last_line)
+	if (check->check_first_line != check->check_last_line)
 		return (1);
-	if (check_first_column != check_last_column)
+	if (check->check_first_column != check->check_last_column)
 		return (1);
 	return (0);
 }
@@ -81,7 +73,11 @@ int ft_check_bad_char(t_data *data, t_env *env)
 			else if (data->map[i][j] == 'E')
 				env->exit++;
 			else if (data->map[i][j] == 'P')
+			{
+				env->player_x = i;
+				env->player_y = j;
 				env->player++;
+			}
 			else if (data->map[i][j] == '0'
 					|| data->map[i][j] == '1'
 					|| data->map[i][j] == '\n')
@@ -118,7 +114,7 @@ void	ft_fill_map(t_data *data)
 
 	i = 0;
 	ft_get_map_height(data);
-	data->map = ft_calloc(sizeof(data->map) , (data->y + 2));
+	data->map = ft_calloc(sizeof(data->map), (data->y + 2));
 	if (!data->map)
 		return ;
 	data->map[data->y + 1] = NULL;

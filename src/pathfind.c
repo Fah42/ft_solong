@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:15:06 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/13 15:17:24 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/13 20:45:07 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ int	ft_pathfind(int i, int j, t_data *data, t_env *env)
 {
 	if (env->exit_founded >= 1 && env->collectible == env->collected)
 		return (1);
+	if (data->map_copy[i][j] == 'P')
+	{
+		data->map_copy[i][j] = '0';
+	}
 	if (data->map_copy[i][j] == 'E')
 	{
-		data->map_copy[i][j] = '1';
+		data->map_copy[i][j] = '0';
 		env->exit_founded++;
 	}
 	if (data->map_copy[i][j] == 'C')
