@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:15:06 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 17:17:14 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/13 15:17:24 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_pathfind(int i, int j, t_data *data, t_env *env)
 		data->map_copy[i][j] = '1';
 		return (ft_pathfind(i, j + 1, data, env)
 			|| ft_pathfind(i + 1, j, data, env)
-	 		|| ft_pathfind(i, j - 1, data, env)
+			|| ft_pathfind(i, j - 1, data, env)
 			|| ft_pathfind(i - 1, j, data, env));
 	}
 	return (0);

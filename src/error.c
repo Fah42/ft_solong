@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:57:22 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/11 17:55:54 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/11 19:08:02 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	ft_manage_error(t_env *env)
 	if (env->exit > 1)
 	{
 		printf("Too many exits\n");
+		return (1);
+	}
+	if (env->bad_char > 0)
+	{
+		printf("Bad characters used in the map\n");
 		return (1);
 	}
 	return (0);
