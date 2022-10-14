@@ -1,4 +1,4 @@
-SRC_MAIN		= main.c check_map.c pathfind.c create_map_cpy.c error.c
+SRC_MAIN		= main.c check_map.c pathfind.c error.c
 SRCS			= ${SRC_MAIN}
 
 LIBFT_DIR 		= ../Libft/
