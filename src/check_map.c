@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 22:43:32 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/15 14:09:02 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/15 15:55:28 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,13 @@ int ft_is_square(t_data *data, char **map, t_check_line *check)
 		j = 0;
 		while (map[i][j])
 		{
-			if (i == 0 && (map[i][j] == '1'
-				|| map[i][j] == '\n'))
+			if (i == 0 && (map[i][j] == '1'))
 				check->check_first_line++;
-			if (i == data->y && (map[i][j] == '1'
-				|| map[i][j] == '\n'))
+			if (i == data->y && (map[i][j] == '1'))
 				check->check_last_line++;
 			if (j == 0 && (map[i][j] == '1'))
 				check->check_first_column++;
-			if (j == data->x && (map[i][j] == '1'
-				|| map[i][j] == '\n'))
+			if (j == data->x && (map[i][j] == '1'))
 				check->check_last_column++;
 			j++;
 		}
