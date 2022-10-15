@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/14 12:54:18 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/15 14:04:45 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(void)
 
 	ft_memset(&env, 0, sizeof(t_env));
 	ft_memset(&map, 0, sizeof(t_map));
+	ft_memset(&check_line, 0, sizeof(t_check_line));
 	game.map_path = "../map/test.ber";
 	ft_fill_map(&game, &map.map);
 	ft_fill_map(&game, &map.map_copy);
@@ -42,8 +43,14 @@ int	main(void)
 		return (0);
 	game.is_path_valid = ft_pathfind(env.player_x, env.player_y, &map, &env);
 	if (game.is_path_valid)
+	{
 		printf("Path is valid");
+		ft_free_map(&map, &game);
+	}
 	else
+	{
 		printf("Path is not valid");
+		ft_free_map(&map, &game);
+	}
 	return (0);
 }

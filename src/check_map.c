@@ -6,11 +6,26 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 22:43:32 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/14 12:42:48 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/15 14:09:02 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_free_map(t_map *map, t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->y + 1)
+	{
+		free(map->map[i]);
+		free(map->map_copy[i]);
+		i++;
+	}
+	free(map->map);
+	free(map->map_copy);
+}
 
 int ft_is_square(t_data *data, char **map, t_check_line *check)
 {
@@ -19,6 +34,7 @@ int ft_is_square(t_data *data, char **map, t_check_line *check)
 
 	i = 0;
 	j = 0;
+	data->x = 0;
 	data->x = ft_strlen_ret(map[0]) - 1;
 	if (!map)
 		return (2);
@@ -123,10 +139,8 @@ void	ft_fill_map(t_data *data, char ***map)
 	while (i < data->y)
 	{
 		(*map)[i] = get_next_line(data->map_fd);
-		// free(data->map[i]);
 		i++;
 	}
-	// free(data->map);
 	data->y -= 1;
 	close(data->map_fd);
 }

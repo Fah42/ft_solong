@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/14 12:52:30 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/15 14:05:11 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,15 @@ typedef struct s_data
 	t_map			map;
 	char			*addr;
 	char			*map_path;
-	char			*ligne_copy;
-	int				bits_per_pixel;
 	int				line_lenght;
 	int				map_fd;
-	int				i;
 	int				x;
+	int				y;
 	void			*mlx;
 	void			*mlx_win;
 	void			*img;
 	int				error;
 	int				is_path_valid;
-	int				y;
 }			t_data;
 
 typedef struct s_env
@@ -72,6 +69,6 @@ int		ft_check_bad_char(t_data *data, char **map, t_env *env);
 void	ft_get_map_height(t_data *data);
 void	ft_fill_map(t_data *data, char ***map);
 void	ft_get_map_height2(t_data *data);
-// void	ft_fill_map2(t_data *data);
+void	ft_free_map(t_map *map, t_data *data);
 int		ft_manage_error(t_env *env);
 #endif
