@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/15 14:33:47 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/17 12:21:23 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,12 @@ typedef struct s_data
 	void			*mlx;
 	void			*mlx_win;
 	void			*img;
+	char			*relative_path;
+	int				img_width;
+	int				img_height;
 	int				error;
 	int				is_path_valid;
+	int				player;
 }			t_data;
 
 typedef struct s_env
@@ -71,4 +75,5 @@ void	ft_fill_map(t_data *data, char ***map);
 void	ft_get_map_height2(t_data *data);
 void	ft_free_map(t_map *map, t_data *data);
 int		ft_manage_error(t_env *env);
+int		ft_display(t_data *game, t_env *env);
 #endif
