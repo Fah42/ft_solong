@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/17 14:33:15 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/21 08:37:18 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,16 @@ int	main(void)
 	t_env			env;
 	t_check_line	check_line;
 	t_map			map;
+	t_img			img;
 
 	ft_memset(&env, 0, sizeof(t_env));
 	ft_memset(&map, 0, sizeof(t_map));
 	ft_memset(&check_line, 0, sizeof(t_check_line));
+	ft_memset(&img, 0, sizeof(t_img));
 	game.map_path = "../map/test.ber";
 	ft_fill_map(&game, &map.map);
 	ft_fill_map(&game, &map.map_copy);
-	game.relative_path = "../img/PNG/run/run_1.xpm";
+	img.player_img_path = "../img/player.xpm";
 	if (ft_check_bad_char(&game, map.map, &env) >= 1)
 	{
 		printf("Bad characters used in the map.");
@@ -62,7 +64,7 @@ int	main(void)
 		printf("Path is valid\n");
 		game.mlx = mlx_init();
 		game.mlx_win = mlx_new_window(game.mlx, 1920, 1080, "Hello world!");
-		ft_display(&game, &env);
+		ft_display(&game, &img, &env);
 		// todo : mlx_hook(game.mlx_win, 17 ou 2, 1L << 0, ft_close, &game);
 		mlx_loop(game.mlx);
 		// ft_free_map(&map, &game);

@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/17 12:21:23 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/21 08:40:06 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_data
 	void			*mlx;
 	void			*mlx_win;
 	void			*img;
-	char			*relative_path;
 	int				img_width;
 	int				img_height;
 	int				error;
@@ -67,6 +66,18 @@ typedef struct s_check_line
 	int	check_last_column;
 }	t_check_line;
 
+typedef struct s_img
+{
+	char	*player_img_path;
+	char	*wall_img_path;
+	char	*collectible_img_path;
+	char	*floor_img_path;
+	char	*exit_closed_img_path;
+	char	*exit_opened_img_path;
+	int		img_width;
+	int		img_height;
+}	t_img;
+
 int		ft_pathfind(int i, int j, t_map *map, t_env *env);
 int		ft_is_square(t_data *data, char **map, t_check_line *check_line);
 int		ft_check_bad_char(t_data *data, char **map, t_env *env);
@@ -75,5 +86,5 @@ void	ft_fill_map(t_data *data, char ***map);
 void	ft_get_map_height2(t_data *data);
 void	ft_free_map(t_map *map, t_data *data);
 int		ft_manage_error(t_env *env);
-int		ft_display(t_data *game, t_env *env);
+int		ft_display(t_data *game, t_img *img, t_env *env);
 #endif
