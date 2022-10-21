@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/21 08:40:06 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/21 17:27:56 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,6 @@ typedef struct s_map
 	char	**map;
 	char	**map_copy;
 }	t_map;
-
-typedef struct s_data
-{
-	t_map			map;
-	char			*addr;
-	char			*map_path;
-	int				line_lenght;
-	int				map_fd;
-	int				x;
-	int				y;
-	void			*mlx;
-	void			*mlx_win;
-	void			*img;
-	int				img_width;
-	int				img_height;
-	int				error;
-	int				is_path_valid;
-	int				player;
-}			t_data;
 
 typedef struct s_env
 {
@@ -68,15 +49,38 @@ typedef struct s_check_line
 
 typedef struct s_img
 {
-	char	*player_img_path;
-	char	*wall_img_path;
-	char	*collectible_img_path;
-	char	*floor_img_path;
-	char	*exit_closed_img_path;
-	char	*exit_opened_img_path;
+	char	*player;
+	char	*wall;
+	char	*collectible;
+	char	*floor;
+	char	*exit_closed;
+	char	*exit_opened;
 	int		img_width;
 	int		img_height;
 }	t_img;
+
+typedef struct s_data
+{
+	t_map			*map;
+	t_env			*env;
+	t_img			*img;
+	char			*addr;
+	char			*map_path;
+	int				line_lenght;
+	int				map_fd;
+	int				x;
+	int				y;
+	void			*img_lol;
+	void			*mlx;
+	void			*mlx_win;
+	int				error;
+	int				is_path_valid;
+	int				player;
+	int				wall;
+	int				collectible;
+	int				exit;
+	int				floor;
+}	t_data;
 
 int		ft_pathfind(int i, int j, t_map *map, t_env *env);
 int		ft_is_square(t_data *data, char **map, t_check_line *check_line);
@@ -86,5 +90,11 @@ void	ft_fill_map(t_data *data, char ***map);
 void	ft_get_map_height2(t_data *data);
 void	ft_free_map(t_map *map, t_data *data);
 int		ft_manage_error(t_env *env);
-int		ft_display(t_data *game, t_img *img, t_env *env);
+int		ft_display_map(t_data *game, t_env *env, t_img *img, t_map *map);
+int		ft_move_left(t_data *game);
+int		ft_move_right(t_data *game);
+int		ft_move_down(t_data *game);
+int		ft_move_up(t_data *game);
+int		ft_close(t_data *game);
+int		key_hook(int keycode, t_data *game);
 #endif

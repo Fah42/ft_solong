@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 14:18:57 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/21 08:37:18 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/21 17:17:52 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 	21 - gerer les leaks
 	22 - gerer les normes
 */
+
 int	main(void)
 {
 	t_data			game;
@@ -41,10 +42,20 @@ int	main(void)
 	ft_memset(&map, 0, sizeof(t_map));
 	ft_memset(&check_line, 0, sizeof(t_check_line));
 	ft_memset(&img, 0, sizeof(t_img));
+	game.env = &env;
+	game.map = &map;
+	game.img = &img;
 	game.map_path = "../map/test.ber";
 	ft_fill_map(&game, &map.map);
 	ft_fill_map(&game, &map.map_copy);
-	img.player_img_path = "../img/player.xpm";
+	img.player = "../img/player.xpm";
+	img.wall = "../img/wall.xpm";
+	img.collectible = "../img/collectible.xpm";
+	img.exit_closed = "../img/door_closed.xpm";
+	img.floor = "../img/floor.xpm";
+	img.exit_opened = "../img/door_opened.xpm";
+	img.img_height = 32;
+	img.img_width = 32;
 	if (ft_check_bad_char(&game, map.map, &env) >= 1)
 	{
 		printf("Bad characters used in the map.");
@@ -63,16 +74,17 @@ int	main(void)
 	{
 		printf("Path is valid\n");
 		game.mlx = mlx_init();
-		game.mlx_win = mlx_new_window(game.mlx, 1920, 1080, "Hello world!");
-		ft_display(&game, &img, &env);
-		// todo : mlx_hook(game.mlx_win, 17 ou 2, 1L << 0, ft_close, &game);
+		game.mlx_win = mlx_new_window(game.mlx, (64 * game.x) + 64, (64 * game.y) + 64, "Hello world!");
+		printf("adresse de env dans le main %p\n", &env);
+		ft_display_map(&game, &env, &img, &map);
+		mlx_key_hook(game.mlx_win, key_hook, &game);
+		mlx_hook(game.mlx_win, 17, 1L << 0, ft_close, &game);
 		mlx_loop(game.mlx);
-		// ft_free_map(&map, &game);
 	}
 	else
 	{
 		printf("Path is not valid");
-		//ft_free_map(&map, &game);
+		ft_free_map(&map, &game);
 	}
 	return (0);
 }
