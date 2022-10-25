@@ -6,7 +6,7 @@
 /*   By: fhadhri <fhadhri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 12:24:54 by fhadhri           #+#    #+#             */
-/*   Updated: 2022/10/21 17:27:56 by fhadhri          ###   ########.fr       */
+/*   Updated: 2022/10/24 15:40:30 by fhadhri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_env
 	int	bad_char;
 	int	wall;
 	int	collected;
+	int	collected_ig;
 	int	exit_founded;
 	int	player_x;
 	int	player_y;
